@@ -5,6 +5,8 @@ public class Personaje {
     private int vida;
     private boolean vivo;
 
+    public Personaje() {
+    }
 
     public Personaje(String nombre, int nivel, int experiencia, int vida, boolean vivo) {
         this.nombre = nombre;
@@ -65,50 +67,46 @@ public class Personaje {
                 '}';
     }
 
-    public void mostrarInformacion() {
+    public String mostrarInformacion() {
         System.out.println("Tu nombre de personaje es" + this.getNombre());
         System.out.println("Tu nivel actual es:" + this.getNivel());
         System.out.println("Tu cantidad  de experencia acumulada es:" + this.getExperiencia());
         System.out.println("Tu vida actual es:" + this.getVida());
         System.out.println("Tu estado  actual es:" + this.isVivo());
     }
-    public String name(double nomb){
-        return name(nombre = nomb);
+    public  int SubirNivel() {
+        if (experiencia >= 100) {
+            nivel++;
+            experiencia -= 100;
+            System.out.println("Haz subido de nivel ahora eres nivel :" + nivel);
+        } else {
+            System.out.println("Tu nivel es " + nivel + " Y tienes esta xp" + experiencia);
+        }
+        return nivel;
     }
-    public int nivel(double n1) {
-        return nivel(nivel = n1);
+
+    public boolean estadot() {
+        return (this.vivo);
     }
-    public double ganarexp(int experiencia){
-        if(this.experiencia >= experiencia){
-            return 60+10;
 
-        }else{
-            return experiencia;
-
-        }
-        public boolean estadot(){
-            return (this.vivo);
-        }
-        public void asignarestado(boolean v1){
-            this.vivo = v1;
-        }
-        public int ganarexperiencia(int exp){
-
-
-        }
-        public void   estadodelP(boolean v1){
-            if(this.vivo);{
-                return "VIVO";
-            }else{
-                return "Estas muerto";
-
-
-            }
-
-
-
-
+    public void asignarestado(boolean v1) {
+        this.vivo = v1;
     }
+
+    public int ganarexperiencia(int exp) {
+        experiencia += exp;
+        System.out.println("Ganaste"+exp+"puntos experiencia");
+        return  experiencia;
+    }
+
+
+
+}
+
+
+
+
+
 
 
 
