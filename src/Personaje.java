@@ -67,41 +67,43 @@ public class Personaje {
                 '}';
     }
 
-    public String mostrarInformacion() {
+    public void mostrarInformacion(){
         System.out.println("Tu nombre de personaje es" + this.getNombre());
         System.out.println("Tu nivel actual es:" + this.getNivel());
         System.out.println("Tu cantidad  de experencia acumulada es:" + this.getExperiencia());
         System.out.println("Tu vida actual es:" + this.getVida());
         System.out.println("Tu estado  actual es:" + this.isVivo());
     }
-    public  int SubirNivel() {
-        if (experiencia >= 100) {
-            nivel++;
-            experiencia -= 100;
-            System.out.println("Haz subido de nivel ahora eres nivel :" + nivel);
-        } else {
-            System.out.println("Tu nivel es " + nivel + " Y tienes esta xp" + experiencia);
+
+
+        public  int SubirNivel() {
+            if (experiencia >= 100) {
+                nivel++;
+                experiencia -= 100;
+                System.out.println("Haz subido de nivel ahora eres nivel :" + nivel);
+            } else {
+                System.out.println("Tu nivel es " + nivel + " Y tienes esta xp" + experiencia);
+            }
+            return nivel;
         }
-        return nivel;
+
+        public boolean estadot() {
+            return (this.vivo);
+        }
+
+        public void asignarestado(boolean v1) {
+            this.vivo = v1;
+        }
+
+        public int ganarexperiencia(int exp) {
+            experiencia += exp;
+            System.out.println("Ganaste"+exp+"puntos experiencia");
+            return  experiencia;
+        }
+
+
+
     }
-
-    public boolean estadot() {
-        return (this.vivo);
-    }
-
-    public void asignarestado(boolean v1) {
-        this.vivo = v1;
-    }
-
-    public int ganarexperiencia(int exp) {
-        experiencia += exp;
-        System.out.println("Ganaste"+exp+"puntos experiencia");
-        return  experiencia;
-    }
-
-
-
-}
 
 
 

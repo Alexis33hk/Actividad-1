@@ -16,14 +16,14 @@ public class Main {
 
 
         do {
-            System.out.println("1. Crear objeto");
-            System.out.println("2. Mostrar la lista");
+            System.out.println("1. Crear un nuevo personaje");
+            System.out.println("2. Mostrar la lista de personajes creados");
 
             System.out.println("Seleccionar una opcion");
             op = teclado.nextInt();
             switch (op) {
                 case 1:
-                    System.out.println("1. crear un objeto");
+                    System.out.println("1. crear un nuevo personaje");
 
                     System.out.println("Ingrese el nombre de su personaje");
                     String nombre = teclado.next();
@@ -37,8 +37,9 @@ public class Main {
                     System.out.println("Ingrese la vida del personaje");
                     int vida = teclado.nextInt();
 
-                    System.out.println("Ingrese el estado del personaje");
-                    boolean vivo = teclado.nextBoolean();
+                    System.out.println("Ingrese el estado del personaje (vivo/muerto)");
+                    String estado = teclado.next();
+                    boolean vivo = estado.equalsIgnoreCase("vivo");
 
                     Personaje pz1 = new Personaje(nombre, nivel, experiencia, vida, vivo);
                     lstlista.add(pz1);
@@ -53,11 +54,18 @@ public class Main {
                     nombre1 = teclado.next();
                     if(lstlista.isEmpty()){
                         System.out.println("LA LISTA NO TIENE ELEMENTOS");
-                    }
-                    Personaje pj1 = null;
-                    for(Personaje p:lstlista){
-                        if(p.getNombre().equalsIgnoreCase(nombre1)){
-                            pj1 = p;
+                    }else {
+                        Personaje pj1 = null;
+                        for (Personaje p : lstlista) {
+                            if (p.getNombre().equalsIgnoreCase(nombre1)) {
+                                pj1 = p;
+                                break;
+                            }
+                        }
+                        if (pj1 != null){
+                            System.out.println("Usuario encontrado:"+ pj1);
+                        }else{
+                            System.out.println("No se encontro el personaje");
                         }
                     }
             }
