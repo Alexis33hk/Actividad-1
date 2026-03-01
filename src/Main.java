@@ -18,7 +18,7 @@ public class Main {
         do {
             System.out.println("1. Crear un nuevo personaje");
             System.out.println("2. Mostrar la lista de personajes creados");
-
+            System.out.println("4.Ingrese el nombre del Personaje que quiere modificar");
             System.out.println("Seleccionar una opcion");
             op = teclado.nextInt();
             switch (op) {
@@ -67,6 +67,14 @@ public class Main {
                         }else{
                             System.out.println("No se encontro el personaje");
                         }
+                    }
+                case 4:
+                    String nombre2;
+                    System.out.println("Ingrese el nombre del PJ que desea modificar");
+                    nombre2 = teclado.next();
+                    if(lstlista.isEmpty()){
+                        System.out.println();
+                        break;
                     }
             }
 
